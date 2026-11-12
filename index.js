@@ -27,7 +27,7 @@ function megjelenit(){
     jatekterElem[0].innerHTML= ""
     jatekterElem[0].insertAdjacentHTML("beforeEnd",htmlKod)
     const jatekGombok = document.querySelectorAll(".gombok button")
-    jatekGombok[0].addEventListener("clisck", kivalaszt)
+    jatekGombok[0].addEventListener("click", kivalaszt)
 }
 
 function kivalaszt(){
