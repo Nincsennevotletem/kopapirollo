@@ -1,6 +1,8 @@
 
 const ujjetekGomb = document.querySelector("#Ujjatek")
+console.log(ujjetekGomb)
 const jatekterElem = document.getElementsByClassName("jatekter")
+console.log(jatekterElem)
 ujjetekGomb.addEventListener("click", megjelenit)
 
 function megjelenit(){
@@ -28,8 +30,42 @@ function megjelenit(){
     jatekterElem[0].insertAdjacentHTML("beforeEnd",htmlKod)
     const jatekGombok = document.querySelectorAll(".gombok button")
     jatekGombok[0].addEventListener("click", kivalaszt)
+    jatekGombok[1].addEventListener("click", kivalaszt)
+    jatekGombok[2].addEventListener("click", kivalaszt)
 }
 
 function kivalaszt(){
+    const kep = document.querySelector("#jatekos img")
+    console.log(kep)
     console.log(event.target.id)
+    kep.src = "kepek / ko.jpg"
+    kep.src = "kepek / papir.jpg"
+    kep.src = "kepek / ollo.jpg"
+    kep.src = `kepecskek/${event.target.id}.jpg`
+}
+
+function gepVaslasztas(jatekos){
+    const kep = document.querySelector("#gep img");
+    let veletlen=Math.floor(Math.random()*3)
+    console.log("gep tipje", veletlen)
+
+    if (veletlen === 0){
+        kep.src = `kepecskek/ko.jpg`
+    } else if (veletlen === 1){
+        kep.src = `kepecskek/papir.jpg`
+    } else{
+        kep.src = `kepecskek/ollo.jpg`
+    }
+    ellenorzes()
+}
+
+function ellenorzes(veletlen, jatekos){
+    
+    let eredmeny = ""
+
+    if (){
+        eredmeny = "Játékos nyert!"
+    }
+    const kiirElem = document.getElementById("gyoztes")
+    kiirElem.innerHTML=`<p>${eredmeny}<p>`;
 }
